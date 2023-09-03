@@ -1,5 +1,5 @@
 {
-  "name": "tw-lib",
+  "name": "@julekgwa/tw-lib",
   "version": "1.0.0",
   "description": "Dead simple react table",
   "main": "dist/index.js",
