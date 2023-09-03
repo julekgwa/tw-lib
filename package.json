@@ -1,6 +1,6 @@
 {
   "name": "tw-lib",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "description": "Dead simple react table",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
