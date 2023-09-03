@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm ci
+      - run: npm ci --force
       - run: npm run build
       - run: npm run test
 
@@ -32,7 +32,7 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
           always-auth: true
-      - run: npm ci
+      - run: npm ci --force
       - run: npm run build
       - run: npm publish
         env:
