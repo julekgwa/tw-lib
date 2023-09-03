@@ -5,7 +5,12 @@ import dts from "rollup-plugin-dts";
 import { terser } from "rollup-plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import autoprefixer from 'autoprefixer'
-import postcss from "rollup-plugin-postcss-modules";
+import postcss from "rollup-plugin-postcss";
+import tailwindcss from 'tailwindcss';
+
+import {
+  default as tailwindConfig
+} from './tailwind.config.js'
 
 export default [
   {
@@ -27,11 +32,16 @@ export default [
     plugins: [
       peerDepsExternal(),
       postcss({
-        extract: true,  // extracts to `${basename(dest)}.css`
-        // plugins: [autoprefixer()],
-        writeDefinitions: true,
-        // modules: { ... }
-      }),
+        config: {
+          path: "./postcss.config.cjs",
+        },
+        extensions: [".css"],
+        minimize: true,
+        inject: {
+          insertAt: "top",
+        },
+        plugins: [tailwindcss(tailwindConfig)],
+      }),,
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),

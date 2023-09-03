@@ -5,6 +5,11 @@
     "skipLibCheck": true,
     "jsx": "react",
     "module": "ESNext",
+    "baseUrl": "src",
+    "paths": {
+      "@/components": ["./src/components/*"],
+      "@/lib/utils": ["./src/lib/*"]
+    },
     "declaration": true,
     "declarationDir": "types",
     "sourceMap": true,
