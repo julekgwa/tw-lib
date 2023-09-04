@@ -20,7 +20,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/julekgwa/tw-lib.git"
+    "url": "git+https://github.com/julekgwa/tw-lib.git",
+    "directory": "@julekgwa/tw-lib"
   },
   "keywords": [
     "react table",

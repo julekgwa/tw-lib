@@ -18,6 +18,7 @@ jobs:
           node-version: 16
       - run: npm ci --force
       - run: npm run build
+      - run: npm pack
       - run: npm run test
 
   publish-gpr:
@@ -35,6 +36,7 @@ jobs:
           scope: '@julekgwa'
       - run: npm ci --force
       - run: npm run build
+      - run: npm pack
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
