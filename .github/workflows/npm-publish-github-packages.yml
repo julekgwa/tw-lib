@@ -45,6 +45,8 @@ jobs:
     needs: publish-gpr
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::$(node -p "require('./package.json').version")
@@ -57,4 +59,4 @@ jobs:
           tag_name: ${{ steps.get_version.outputs.VERSION }}
           release_name: Release ${{ steps.get_version.outputs.VERSION }}
           draft: false
-          prerelease: false
+        prerelease: false
